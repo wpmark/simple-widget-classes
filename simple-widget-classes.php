@@ -40,7 +40,7 @@ class Simple_Widget_Classes {
 	/* update the class input on widget save */
 	function Update($instance, $new_instance) {
 	
-		$instance['simple_widget_css_class'] = $new_instance['simple_widget_css_class'];
+		$instance['simple_widget_css_class'] = wp_strip_all_tags( $new_instance['simple_widget_css_class'] );
 		return $instance;
 	}
 	
