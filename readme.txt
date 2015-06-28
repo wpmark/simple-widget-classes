@@ -31,6 +31,9 @@ None so far!
 
 == Changelog ==
 
+= 0.3 =
+* Correct an issue with an invalid tag on the front-end due to an additional forward slash in the preg_replace call
+
 = 0.1 =
 * Initial Beta Release
 

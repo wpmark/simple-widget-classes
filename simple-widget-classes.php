@@ -5,7 +5,7 @@ Plugin URI: https://github.com/wpmark/simple-widget-classes
 Description: WordPress plugin to provide a text input for all widgets to add a custom class for that widget. functions.php file.
 Author: Mark Wilkinson
 Author URI: http://markwilkinson.me
-Version: 0.2
+Version: 0.3
 */
 
 class Simple_Widget_Classes {
