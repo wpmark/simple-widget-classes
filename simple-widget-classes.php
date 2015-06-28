@@ -13,7 +13,7 @@ class Simple_Widget_Classes {
 	/* hooks the class methods into wordpress through filters */
 	public function __construct() {
 		
-		add_filter( 'widget_form_callback', array( $this, 'Form' ), 10, 2 );
+		add_filter( 'widget_form_callback', array( $this, 'Form' ), 99, 2 );
 		add_filter( 'widget_update_callback', array ($this, 'Update' ), 10, 2 );
 		add_filter( 'dynamic_sidebar_params', array( $this, 'Apply' ) );
 		
@@ -24,6 +24,7 @@ class Simple_Widget_Classes {
 		
 		if( !isset( $instance[ 'simple_widget_css_class' ] ) )
 			$instance[ 'simple_widget_css_class' ] = null;
+
 		?>
 		
 		<p>
@@ -33,6 +34,7 @@ class Simple_Widget_Classes {
 		</p>
 		
 		<?php
+
 		return $instance;
 		
 	}
@@ -59,7 +61,7 @@ class Simple_Widget_Classes {
 			
 		if( isset( $option_name[ $number ][ 'simple_widget_css_class' ] ) && !empty( $option_name[ $number ][ 'simple_widget_css_class' ] ) ) {
 			/* find the end of the class= part and replace with new class and the closing "> */
-			$params[0]['before_widget'] = preg_replace('/">/', " {$option_name[$number]['simple_widget_css_class']}\"/>", $params[0]['before_widget'], 1);
+			$params[0]['before_widget'] = preg_replace('/">/', " {$option_name[$number]['simple_widget_css_class']}\">", $params[0]['before_widget'], 1);
 		}
 		
 		return $params;
